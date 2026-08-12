@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented here.
 
+## [0.2.0] - Unreleased
+
+### Added
+
+- a domain-adaptation guide with an explicit suitability test, input mapping,
+  prior-leakage rules, configuration guidance, and minimum evaluation package;
+- a concrete compressive-strength development walkthrough and runnable
+  synthetic example;
+- `ModelConfig.for_concrete_strength()` as an overrideable MPa- and day-scale
+  starting configuration; and
+- `GroupedSplit` and `grouped_train_validation_test_split()` for reproducible,
+  group-disjoint train, validation, and test partitions.
+
+### Changed
+
+- advanced the `main` branch to the `0.2.0.dev0` development line after the
+  stable `0.1.1` PyPI release.
+
 ## [0.1.1] - 2026-08-12
 
 ### Added

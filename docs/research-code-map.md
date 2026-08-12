@@ -4,6 +4,15 @@ This document records how the reusable package relates to the manuscript's
 working research code. The public package was rewritten into import-safe
 modules; it is not a byte-for-byte copy of the monolithic analysis scripts.
 
+## Added on the `0.2.0.dev0` development line
+
+The domain-adaptation guide, concrete-strength development walkthrough,
+strength-specific configuration preset, grouped split helper, and synthetic
+strength example demonstrate how the reusable architecture can be wired to a
+second non-negative, monotone, bounded response. They do not add a calibrated
+strength database, a certified strength formulation, trained weights, or a
+real-concrete performance claim.
+
 ## Included in `0.1.1`
 
 | Research concept | Public implementation |

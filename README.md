@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/github/license/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/Python-%E2%89%A53.9-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![PyPI](https://img.shields.io/pypi/v/pea-pgnn?style=flat-square)](https://pypi.org/project/pea-pgnn/)
-[![Version](https://img.shields.io/badge/version-0.1.1-2ea44f?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/development-0.2.0.dev0-orange?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/CHANGELOG.md)
 [![Tests](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml)
 [![Ruff](https://img.shields.io/badge/lint-Ruff-D7FF64?style=flat-square&logo=ruff&logoColor=261230)](https://docs.astral.sh/ruff/)
 [![GitHub release](https://img.shields.io/github/v/release/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/releases)
@@ -11,6 +11,7 @@
 
 [Documentation](https://github.com/hunter137/pea-pgnn/tree/main/docs) ·
 [Examples](https://github.com/hunter137/pea-pgnn/tree/main/examples) ·
+[Domain adaptation](https://github.com/hunter137/pea-pgnn/blob/main/docs/adapting-to-a-new-domain.md) ·
 [Public API](#public-api) ·
 [Model card](https://github.com/hunter137/pea-pgnn/blob/main/MODEL_CARD.md) ·
 [Contributing](https://github.com/hunter137/pea-pgnn/blob/main/CONTRIBUTING.md) ·
@@ -35,9 +36,10 @@ shrinkage prediction. The package contains the method and empirical-prior
 utilities, but **does not contain the paper's database, trained weights, or
 submission files**.
 
-> Status: `0.1.1` alpha. This repository is a clean, reusable implementation
-> extracted from research code. It is not yet the exact reproduction archive
-> for every experiment reported in the manuscript.
+> Status: the latest stable PyPI release is `0.1.1`; the `main` branch is the
+> `0.2.0.dev0` development line. This repository is a clean, reusable
+> implementation extracted from research code. It is not yet the exact
+> reproduction archive for every experiment reported in the manuscript.
 
 ## Highlights
 
@@ -53,6 +55,8 @@ submission files**.
   metrics with reusable evaluation utilities.
 - **Research-oriented documentation:** explicit input contracts, method
   boundaries, reproducibility scope, tests, and a runnable synthetic example.
+- **Domain adaptation support:** a group-disjoint split helper, an explicit
+  strength-development preset, and a second runnable application walkthrough.
 
 ## Installation
 
@@ -75,6 +79,11 @@ Install the released package with:
 ```bash
 python -m pip install pea-pgnn
 ```
+
+This installs the stable `0.1.1` release. The domain-adaptation guide,
+strength-development preset, grouped split helper, and strength example are
+currently on the `0.2.0.dev0` development line and can be tried with the GitHub
+installation below.
 
 ### Install from GitHub
 
@@ -210,6 +219,11 @@ software demonstration on synthetic data, not a benchmark claim.
 - `PriorAnchoredRegressor`: fitted preprocessing, training, prediction, and
   checkpoint wrapper.
 - `ModelConfig` and `TrainingConfig`: explicit model and optimization settings.
+- `ModelConfig.for_concrete_strength`: MPa- and day-scale starting assumptions
+  for age-dependent compressive-strength development; applications must adapt
+  the bounds to their documented domain.
+- `grouped_train_validation_test_split`: reproducible row indices that keep all
+  observations from one physical condition in exactly one data partition.
 - `candidate_time_laws` and `convex_time_evolution`: NumPy implementations of
   the structured temporal basis.
 - `audit_trajectory`: numerical audit of non-negativity, monotonicity, and
@@ -237,8 +251,17 @@ identifiable material properties.
   intended uses, out-of-scope uses, outputs, evaluation guidance, and risks.
 - [Research-code map](https://github.com/hunter137/pea-pgnn/blob/main/docs/research-code-map.md):
   relationship between this package and the working manuscript code.
+- [Adapting to a new domain](https://github.com/hunter137/pea-pgnn/blob/main/docs/adapting-to-a-new-domain.md):
+  suitability test, input mapping, leakage control, bounds, and minimum
+  evaluation requirements.
+- [Concrete strength development](https://github.com/hunter137/pea-pgnn/blob/main/docs/concrete-strength-development.md):
+  long-table schema, anchor strategies, strength-specific configuration, and
+  group-disjoint training workflow.
 - [Synthetic example](https://github.com/hunter137/pea-pgnn/blob/main/examples/synthetic_demo.py):
   complete training, prediction, and trajectory-audit workflow.
+- [Synthetic strength example](https://github.com/hunter137/pea-pgnn/blob/main/examples/concrete_strength_development.py):
+  runnable second-domain wiring demonstration without a real-concrete accuracy
+  claim.
 
 For bugs, unexpected behavior, or feature requests, open a
 [GitHub issue](https://github.com/hunter137/pea-pgnn/issues) and include a
@@ -319,3 +342,5 @@ that license. The software is provided without warranty.
 PEA-PGNN 将论文中的知识体系整理为可复用代码：把经验量作为可修正锚点，把多种时间演化规律组成凸组合，并由前向结构保证点预测的非负、单调和有界性质。经验模型来源、单位、简化假设及适用边界见 `docs/empirical-priors.md`；模型用途、风险和评估要求见 `MODEL_CARD.md`。
 
 当前仓库是首个干净的软件包版本，包含核心模型、混凝土经验先验、训练封装、约束检查、测试和示例；不包含论文数据库、训练权重、论文正文、审稿材料和实验输出。本项目采用 MIT 开源许可证，作者为 Deyu Liang、Jinlong Liu 和 Lei Xu，资助信息见上方 Acknowledgements。
+
+`main` 分支的 `0.2.0.dev0` 开发线新增了领域适配指南、按物理条件分组的数据划分工具、混凝土强度发展起始配置和合成示例。这些内容说明如何搭建第二类应用，但不代表已经用真实强度数据库完成外部验证，也不应直接用于结构安全决策。

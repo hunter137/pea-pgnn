@@ -102,7 +102,8 @@ properties for separately calculated interval endpoints.
 
 ## Reproducibility and provenance
 
-- software version: `0.1.1`;
+- software version: `0.2.0.dev0` development line; the latest stable release is
+  `0.1.1`;
 - license: MIT;
 - authors and software citation metadata: [`CITATION.cff`](CITATION.cff);
 - empirical lineage and implementation boundary:

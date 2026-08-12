@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -21,6 +22,32 @@ class ModelConfig:
     timescale_bounds: tuple[float, float] = (5.0, 1000.0)
     additive_magnitude_scale: float = 200.0
     alpha_bounds: tuple[float, float] = (0.1, 0.9)
+
+    @classmethod
+    def for_concrete_strength(cls, **overrides: Any) -> ModelConfig:
+        """Return a practical starting configuration for strength development.
+
+        The preset assumes compressive strength in MPa and age in days. Its
+        bounds are intentionally broad starting values rather than universal
+        material limits. Applications must tighten or expand them from their
+        documented data domain and prior model.
+
+        Any :class:`ModelConfig` field can be overridden by keyword, for
+        example ``magnitude_bounds=(1.0, 120.0)``.
+        """
+
+        values: dict[str, Any] = {
+            "hidden_dims": (64, 32),
+            "dropout": 0.05,
+            "magnitude_relative_bounds": (-0.4, 0.6),
+            "timescale_relative_bounds": (-0.8, 2.0),
+            "magnitude_bounds": (1.0, 200.0),
+            "timescale_bounds": (0.25, 1500.0),
+            "additive_magnitude_scale": 15.0,
+            "alpha_bounds": (0.1, 1.5),
+        }
+        values.update(overrides)
+        return cls(**values)
 
     def __post_init__(self) -> None:
         if not self.hidden_dims or any(width <= 0 for width in self.hidden_dims):

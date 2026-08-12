@@ -19,6 +19,12 @@ impute missing values or infer units.
 For a repeated condition trajectory, all context values and prior anchors must
 remain identical while `time` changes.
 
+When the scientific test concerns unseen physical conditions, use a stable
+group identifier and keep every group in exactly one partition. The helper
+`grouped_train_validation_test_split` returns mutually group-disjoint train,
+validation, and test row indices. A group ID such as `mix_id` is used for
+splitting and should not be treated as an ordinary numeric context feature.
+
 ## Concrete implementation units
 
 The empirical utilities in `pea_pgnn.concrete` use the units below:
@@ -47,4 +53,3 @@ multiple observations belong to the same physical condition. Build the scientifi
 train/test protocol outside the estimator, keep condition groups intact, fit
 preprocessing on training data only, and pass an explicit validation set to
 `fit` when its grouping or temporal boundary matters.
-
