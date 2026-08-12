@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use PEA-PGNN in your research, please cite this software."
+type: software
+title: "PEA-PGNN: Prior-anchored structure-preserving neural prediction"
+abstract: >-
+  A Python package for prior-anchored, structure-preserving prediction of
+  time-dependent engineering responses, with concrete drying shrinkage as the
+  first bundled application.
+authors:
+  - family-names: Liang
+    given-names: Deyu
+    orcid: "https://orcid.org/0009-0004-4042-8826"
+repository-code: "https://github.com/hunter137/pea-pgnn"
+url: "https://github.com/hunter137/pea-pgnn"
+license: MIT
+version: 0.1.0
+date-released: 2026-08-12
+keywords:
+  - concrete drying shrinkage
+  - temporal extrapolation
+  - prior-anchored learning
+  - knowledge-guided neural network
+  - structure-preserving prediction
+  - scientific machine learning

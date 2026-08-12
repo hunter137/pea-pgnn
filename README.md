@@ -1,5 +1,16 @@
 # PEA-PGNN
 
+[![License: MIT](https://img.shields.io/github/license/hunter137/pea-pgnn?style=flat-square)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-%E2%89%A53.9-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Version](https://img.shields.io/badge/version-0.1.0-2ea44f?style=flat-square)](CHANGELOG.md)
+[![Tests](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml)
+[![Ruff](https://img.shields.io/badge/lint-Ruff-D7FF64?style=flat-square&logo=ruff&logoColor=261230)](https://docs.astral.sh/ruff/)
+[![GitHub release](https://img.shields.io/github/v/release/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/releases)
+[![GitHub stars](https://img.shields.io/github/stars/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/stargazers)
+
+**Prior-anchored, structure-preserving neural prediction for time-dependent
+engineering responses.**
+
 PEA-PGNN is a research-oriented Python package for **prior-anchored,
 structure-preserving prediction of time-dependent engineering responses**. It
 turns three types of incomplete engineering knowledge into explicit
@@ -171,9 +182,13 @@ licensing and manuscript-publication constraints.
 
 ## Citation
 
-The associated manuscript is still being prepared. A final citation and
-`CITATION.cff` should be added after the title, author list, DOI, and software
-archive DOI are confirmed.
+If this software is useful in your research, please cite the software release
+using the repository's **Cite this repository** menu. The metadata are stored in
+[`CITATION.cff`](CITATION.cff). The associated manuscript is still being
+prepared; its final bibliographic citation and DOI will be added when available.
+
+A Zenodo DOI badge will be added only after this GitHub repository is connected
+to Zenodo and a release has been archived. No placeholder DOI is used.
 
 ## License
 

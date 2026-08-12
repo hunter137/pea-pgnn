@@ -13,3 +13,5 @@ All notable changes to this project will be documented here.
 - trajectory-constraint auditing and regression metrics;
 - tests, a synthetic example, documentation, and GitHub Actions CI.
 - MIT open-source license.
+- GitHub project badges and software citation metadata.
+- Zenodo-ready release metadata (without a placeholder DOI).
