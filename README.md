@@ -24,7 +24,15 @@ submission files**.
 After cloning the repository:
 
 ```bash
+git clone https://github.com/hunter137/pea-pgnn.git
+cd pea-pgnn
 python -m pip install -e .
+```
+
+The current GitHub version can also be installed directly:
+
+```bash
+python -m pip install "git+https://github.com/hunter137/pea-pgnn.git"
 ```
 
 For development and testing:

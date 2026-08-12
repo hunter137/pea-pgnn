@@ -30,6 +30,11 @@ classifiers = [
     "Topic :: Scientific/Engineering",
 ]
 
+[project.urls]
+Homepage = "https://github.com/hunter137/pea-pgnn"
+Repository = "https://github.com/hunter137/pea-pgnn"
+Issues = "https://github.com/hunter137/pea-pgnn/issues"
+
 [project.optional-dependencies]
 dev = [
     "build>=1.2",

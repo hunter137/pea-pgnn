@@ -33,7 +33,7 @@ git init -b main
 git add .
 git status
 git commit -m "Initial public package structure"
-git remote add origin https://github.com/YOUR_ACCOUNT/pea-pgnn.git
+git remote add origin https://github.com/hunter137/pea-pgnn.git
 git push -u origin main
 ```
 
