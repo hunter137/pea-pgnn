@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pea-pgnn"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Prior-anchored, structure-preserving neural prediction for time-dependent engineering responses"
 readme = "README.md"
 authors = [
@@ -55,8 +55,11 @@ dev = [
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.dynamic]
+version = { attr = "pea_pgnn._version.__version__" }
+
 [tool.pytest.ini_options]
-addopts = "-ra --strict-markers"
+addopts = "-ra --strict-markers --cov=pea_pgnn --cov-report=term-missing --cov-fail-under=80"
 testpaths = ["tests"]
 
 [tool.ruff]

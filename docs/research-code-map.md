@@ -4,7 +4,7 @@ This document records how the reusable package relates to the manuscript's
 working research code. The public package was rewritten into import-safe
 modules; it is not a byte-for-byte copy of the monolithic analysis scripts.
 
-## Included in `0.1.0`
+## Included in `0.1.1`
 
 | Research concept | Public implementation |
 | --- | --- |
@@ -23,6 +23,10 @@ ambiguity in the working script, where zero raw head output was described as
 anchor-centered even though asymmetric sigmoid bounds map zero to the interval
 midpoint. The cleaned package computes the logit needed to map each asymmetric
 interval to a true zero correction.
+
+Version `0.1.1` also adds an explicit empirical-prior provenance document,
+model card, release/security/community files, stable implementation reference
+cases, NumPy/PyTorch temporal-law parity checks, and broader metric/input tests.
 
 ## Deliberately not included in the reusable core
 
@@ -50,4 +54,3 @@ must come from the documented condition-disjoint or represented-condition
 temporal protocols, fold-fitted preprocessing, and paired condition-profile
 inference. Users should construct those splits externally and pass an explicit
 validation set when fitting.
-

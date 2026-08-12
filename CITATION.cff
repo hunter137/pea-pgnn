@@ -21,8 +21,7 @@ authors:
 repository-code: "https://github.com/hunter137/pea-pgnn"
 url: "https://github.com/hunter137/pea-pgnn"
 license: MIT
-version: 0.1.0
-date-released: 2026-08-12
+version: 0.1.1
 keywords:
   - concrete drying shrinkage
   - temporal extrapolation

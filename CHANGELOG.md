@@ -2,7 +2,18 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased
+## [0.1.1] - Unreleased
+
+### Added
+
+- empirical-prior provenance, units, implementation choices, and primary
+  source links;
+- a model card and security policy;
+- bug-report and feature-request forms, a pull-request template, code of
+  conduct, and Dependabot configuration;
+- a Trusted Publishing release workflow for TestPyPI and PyPI; and
+- stable concrete implementation cases, EC2 coverage, metrics tests,
+  invalid-input tests, a coverage threshold, and NumPy/PyTorch parity tests.
 
 ### Changed
 
@@ -10,6 +21,12 @@ All notable changes to this project will be documented here.
   support, author, and funding information;
 - made README repository links work from both GitHub and PyPI; and
 - standardized author metadata for Deyu Liang, Jinlong Liu, and Lei Xu.
+- expanded README guidance for empirical outputs, `predict_details`, runnable
+  examples, and scientifically defensible temporal validation;
+- centralized the package version and aligned development metadata at `0.1.1`;
+  and
+- updated the public-release checklist to distinguish completed repository work
+  from external publication configuration.
 
 ## [0.1.0] - 2026-08-12
 

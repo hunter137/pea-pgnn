@@ -26,3 +26,33 @@ def test_invalid_weights_are_rejected() -> None:
     with pytest.raises(ValueError, match="sum to one"):
         convex_time_evolution([1.0, 2.0], 10.0, [0.1, 0.2, 0.3, 0.3])
 
+
+@pytest.mark.parametrize(
+    ("time", "timescale", "alpha", "message"),
+    [
+        ([-1.0], 10.0, 0.5, "time"),
+        ([1.0], 0.0, 0.5, "timescale"),
+        ([1.0], 10.0, 0.0, "alpha"),
+    ],
+)
+def test_invalid_candidate_law_inputs_are_rejected(
+    time, timescale, alpha, message
+) -> None:
+    with pytest.raises(ValueError, match=message):
+        candidate_time_laws(time, timescale, alpha)
+
+
+def test_numpy_and_torch_candidate_laws_agree() -> None:
+    torch = pytest.importorskip("torch")
+    from pea_pgnn import ModelConfig, PriorAnchoredTemporalModel
+
+    time = np.array([0.0, 7.0, 28.0, 365.0])
+    timescale = np.full_like(time, 80.0)
+    alpha = np.full_like(time, 0.45)
+    numpy_laws = candidate_time_laws(time, timescale, alpha)
+    model = PriorAnchoredTemporalModel(1, ModelConfig(hidden_dims=(4,), dropout=0.0))
+    torch_laws = model.candidate_laws(
+        torch.tensor(time), torch.tensor(timescale), torch.tensor(alpha)
+    ).numpy()
+    np.testing.assert_allclose(numpy_laws, torch_laws, rtol=1e-12, atol=1e-12)
+

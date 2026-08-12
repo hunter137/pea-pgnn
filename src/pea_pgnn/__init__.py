@@ -1,5 +1,6 @@
 """PEA-PGNN public package interface."""
 
+from ._version import __version__
 from .config import ModelConfig, TrainingConfig
 from .constraints import ConstraintReport, audit_trajectory
 from .estimator import PriorAnchoredRegressor
@@ -17,7 +18,5 @@ __all__ = [
     "candidate_time_laws",
     "convex_time_evolution",
     "regression_metrics",
+    "__version__",
 ]
-
-__version__ = "0.1.0"
-

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import numpy as np
 
-from pea_pgnn import ModelConfig, PriorAnchoredRegressor, TrainingConfig
+from pea_pgnn import ModelConfig, PriorAnchoredRegressor, TrainingConfig, __version__
 
 
 def test_estimator_fit_predict_and_checkpoint(tmp_path: Path) -> None:
@@ -32,9 +32,10 @@ def test_estimator_fit_predict_and_checkpoint(tmp_path: Path) -> None:
 
     checkpoint = tmp_path / "model.pt"
     estimator.save(checkpoint)
+    payload = __import__("torch").load(checkpoint, map_location="cpu", weights_only=True)
+    assert payload["package_version"] == __version__
     restored = PriorAnchoredRegressor.load(checkpoint, device="cpu")
     restored_prediction = restored.predict(
         context, time, magnitude * 0.95, timescale * 1.05
     )
     np.testing.assert_allclose(prediction, restored_prediction, rtol=1e-6, atol=1e-6)
-

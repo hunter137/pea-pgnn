@@ -12,6 +12,7 @@ import torch
 from numpy.typing import ArrayLike, NDArray
 from sklearn.preprocessing import RobustScaler
 
+from ._version import __version__
 from .config import ModelConfig, TrainingConfig
 from .model import PriorAnchoredTemporalModel
 
@@ -342,7 +343,7 @@ class PriorAnchoredRegressor:
             raise RuntimeError("only a fitted regressor can be saved")
         payload = {
             "format_version": 1,
-            "package_version": "0.1.0",
+            "package_version": __version__,
             "context_dim": self.context_dim_,
             "model_config": asdict(self.model_config),
             "training_config": asdict(self.training_config),

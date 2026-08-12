@@ -1,0 +1,36 @@
+name: Feature request
+description: Propose a focused API, documentation, or research-method improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What research or software task is difficult with the current package?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the public API or documentation behavior you would like.
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Scientific assumptions and compatibility
+      description: State units, applicable domain, source formulation, and backward-compatibility implications when relevant.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and documentation for the same request.
+          required: true
+

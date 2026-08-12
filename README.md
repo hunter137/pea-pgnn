@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/github/license/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/Python-%E2%89%A53.9-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Version](https://img.shields.io/badge/version-0.1.0-2ea44f?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.1.1-2ea44f?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/CHANGELOG.md)
 [![Tests](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml)
 [![Ruff](https://img.shields.io/badge/lint-Ruff-D7FF64?style=flat-square&logo=ruff&logoColor=261230)](https://docs.astral.sh/ruff/)
 [![GitHub release](https://img.shields.io/github/v/release/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/releases)
@@ -11,6 +11,7 @@
 [Documentation](https://github.com/hunter137/pea-pgnn/tree/main/docs) ·
 [Examples](https://github.com/hunter137/pea-pgnn/tree/main/examples) ·
 [Public API](#public-api) ·
+[Model card](https://github.com/hunter137/pea-pgnn/blob/main/MODEL_CARD.md) ·
 [Contributing](https://github.com/hunter137/pea-pgnn/blob/main/CONTRIBUTING.md) ·
 [Issues](https://github.com/hunter137/pea-pgnn/issues) ·
 [Releases](https://github.com/hunter137/pea-pgnn/releases)
@@ -33,7 +34,7 @@ shrinkage prediction. The package contains the method and empirical-prior
 utilities, but **does not contain the paper's database, trained weights, or
 submission files**.
 
-> Status: `0.1.0` alpha. This repository is a clean, reusable implementation
+> Status: `0.1.1` alpha. This repository is a clean, reusable implementation
 > extracted from research code. It is not yet the exact reproduction archive
 > for every experiment reported in the manuscript.
 
@@ -129,6 +130,12 @@ print(priors["magnitude"])
 print(priors["timescale"])
 ```
 
+`concrete_prior_anchors` returns `magnitude`, `timescale`, and the three
+component estimates `b3_magnitude`, `gl2000_magnitude`, and
+`aci209_magnitude`. Their formulation lineage, units, simplifications, and
+applicability limits are documented in
+[`docs/empirical-priors.md`](https://github.com/hunter137/pea-pgnn/blob/main/docs/empirical-priors.md).
+
 ## Quick start: structured temporal evolution
 
 The four normalized candidate laws can also be used without training a neural
@@ -181,6 +188,21 @@ y_pred = regressor.predict(
 
 A complete runnable synthetic example is provided in
 [`examples/synthetic_demo.py`](https://github.com/hunter137/pea-pgnn/blob/main/examples/synthetic_demo.py).
+Run it after a development install with:
+
+```bash
+python examples/synthetic_demo.py
+```
+
+It prints epoch losses, regression metrics, and a `ConstraintReport` whose
+`passed=True` value verifies the sampled point trajectory. The example is a
+software demonstration on synthetic data, not a benchmark claim.
+
+> **Evaluation warning:** when several rows belong to one physical condition,
+> the estimator's fallback random validation split is only a convenience for
+> optimization. It is generally not a defensible temporal-extrapolation
+> protocol. Keep condition groups intact, construct the cutoff externally, and
+> pass `validation_data=` explicitly for scientific evaluation.
 
 ## Public API
 
@@ -196,12 +218,23 @@ A complete runnable synthetic example is provided in
 - `pea_pgnn.concrete`: B3-, GL2000-, ACI209-, and EC2-inspired empirical
   shrinkage utilities used by the concrete implementation.
 
+`PriorAnchoredRegressor.predict_details` returns `prediction`, corrected
+`magnitude` and `timescale`, `alpha`, normalized `weights`, the four
+`candidate_laws`, their mixed `evolution`, and the three learned correction
+terms. These outputs are interpretable model quantities, not automatically
+identifiable material properties.
+
 ## Documentation and support
 
 - [Method](https://github.com/hunter137/pea-pgnn/blob/main/docs/method.md):
   computational formulation and inherited structural properties.
+- [Empirical-prior provenance](https://github.com/hunter137/pea-pgnn/blob/main/docs/empirical-priors.md):
+  source formulations, units, compact implementation choices, and applicability
+  limits.
 - [Data contract](https://github.com/hunter137/pea-pgnn/blob/main/docs/data-contract.md):
   required inputs, shapes, units, and evaluation cautions.
+- [Model card](https://github.com/hunter137/pea-pgnn/blob/main/MODEL_CARD.md):
+  intended uses, out-of-scope uses, outputs, evaluation guidance, and risks.
 - [Research-code map](https://github.com/hunter137/pea-pgnn/blob/main/docs/research-code-map.md):
   relationship between this package and the working manuscript code.
 - [Synthetic example](https://github.com/hunter137/pea-pgnn/blob/main/examples/synthetic_demo.py):
@@ -213,6 +246,9 @@ minimal reproducible example, your Python version, and your PEA-PGNN version.
 Contributions are welcome; see the
 [contribution guide](https://github.com/hunter137/pea-pgnn/blob/main/CONTRIBUTING.md)
 before submitting a pull request.
+Security-sensitive reports should follow the private route in the
+[security policy](https://github.com/hunter137/pea-pgnn/blob/main/SECURITY.md),
+not a public issue.
 
 ## Method boundary
 
@@ -283,6 +319,6 @@ that license. The software is provided without warranty.
 
 ## 中文说明
 
-PEA-PGNN 将论文中的知识体系整理为可复用代码：把经验量作为可修正锚点，把多种时间演化规律组成凸组合，并由前向结构保证点预测的非负、单调和有界性质。
+PEA-PGNN 将论文中的知识体系整理为可复用代码：把经验量作为可修正锚点，把多种时间演化规律组成凸组合，并由前向结构保证点预测的非负、单调和有界性质。经验模型来源、单位、简化假设及适用边界见 `docs/empirical-priors.md`；模型用途、风险和评估要求见 `MODEL_CARD.md`。
 
 当前仓库是首个干净的软件包版本，包含核心模型、混凝土经验先验、训练封装、约束检查、测试和示例；不包含论文数据库、训练权重、论文正文、审稿材料和实验输出。本项目采用 MIT 开源许可证，作者为 Deyu Liang、Jinlong Liu 和 Lei Xu，资助信息见上方 Acknowledgements。
