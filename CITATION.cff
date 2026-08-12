@@ -7,9 +7,9 @@ abstract: >-
   time-dependent engineering responses, with concrete drying shrinkage as the
   first bundled application.
 authors:
-  - family-names: Liang
-    given-names: Deyu
+  - name: "deyuliang"
     orcid: "https://orcid.org/0009-0004-4042-8826"
+    website: "https://github.com/hunter137"
 repository-code: "https://github.com/hunter137/pea-pgnn"
 url: "https://github.com/hunter137/pea-pgnn"
 license: MIT

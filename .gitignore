@@ -18,6 +18,7 @@ env/
 # Packaging outputs
 build/
 dist/
+.qa-dist/
 *.egg-info/
 
 # Editors and operating systems
@@ -54,4 +55,3 @@ datasets/
 *.pptx
 *.tex
 *.zip
-

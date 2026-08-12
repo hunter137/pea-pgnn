@@ -30,4 +30,6 @@ jobs:
       - name: Build distributions
         if: matrix.python-version == '3.11'
         run: python -m build
-
+      - name: Check distribution metadata and README rendering
+        if: matrix.python-version == '3.11'
+        run: python -m twine check dist/*
