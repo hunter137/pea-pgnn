@@ -1,7 +1,6 @@
 include README.md
 include LICENSE
 include CITATION.cff
-include .zenodo.json
 include CHANGELOG.md
 include CONTRIBUTING.md
 include CODE_OF_CONDUCT.md

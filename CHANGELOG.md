@@ -19,8 +19,8 @@ All notable changes to this project will be documented here.
 
 - expanded the README with feature highlights, requirements, documentation,
   support, author, and funding information;
-- made README repository links work from both GitHub and PyPI; and
-- standardized author metadata for Deyu Liang, Jinlong Liu, and Lei Xu.
+- made README repository links work from both GitHub and PyPI;
+- standardized author metadata for Deyu Liang, Jinlong Liu, and Lei Xu;
 - expanded README guidance for empirical outputs, `predict_details`, runnable
   examples, and scientifically defensible temporal validation;
 - centralized the package version and aligned development metadata at `0.1.1`;
@@ -37,7 +37,6 @@ All notable changes to this project will be documented here.
 - four normalized candidate temporal laws and convex-mixture utility;
 - concrete drying-shrinkage empirical prior utilities;
 - trajectory-constraint auditing and regression metrics;
-- tests, a synthetic example, documentation, and GitHub Actions CI.
-- MIT open-source license.
+- tests, a synthetic example, documentation, and GitHub Actions CI;
+- MIT open-source license; and
 - GitHub project badges and software citation metadata.
-- Zenodo-ready release metadata (without a placeholder DOI).

@@ -48,6 +48,5 @@ PDF、PPTX、模型权重或论文上级目录中的任何文件。
 - [ ] 在 TestPyPI 登记同样的发布者，但环境填写 `testpypi`。
 - [ ] 在 GitHub 创建 `pypi` 和 `testpypi` environments；`pypi` 应要求人工批准。
 - [ ] 手动运行 `release` 工作流发布到 TestPyPI，并在干净环境验证安装。
-- [ ] 确认版本号、`CHANGELOG.md`、`CITATION.cff`、`.zenodo.json` 一致。
+- [ ] 确认版本号、`CHANGELOG.md` 和 `CITATION.cff` 一致。
 - [ ] 为该版本创建 `vX.Y.Z` 标签和 GitHub Release；发布事件将触发 PyPI 上传。
-- [ ] 连接 Zenodo 后再加入真实 DOI，不使用占位 DOI。

@@ -288,9 +288,6 @@ using the repository's **Cite this repository** menu. The metadata are stored in
 The associated manuscript is still being prepared; its final bibliographic
 citation and DOI will be added when available.
 
-A Zenodo DOI badge will be added only after this GitHub repository is connected
-to Zenodo and a release has been archived. No placeholder DOI is used.
-
 ## Authors
 
 - **Deyu Liang** — School of Transportation and Surveying Engineering,
