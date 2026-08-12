@@ -9,7 +9,7 @@ All notable changes to this project will be documented here.
 - expanded the README with feature highlights, requirements, documentation,
   support, author, and funding information;
 - made README repository links work from both GitHub and PyPI; and
-- standardized author and maintainer metadata as `deyuliang`.
+- standardized author metadata for Deyu Liang, Jinlong Liu, and Lei Xu.
 
 ## [0.1.0] - 2026-08-12
 

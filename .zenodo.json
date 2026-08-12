@@ -3,8 +3,17 @@
   "description": "A Python package for prior-anchored, structure-preserving prediction of time-dependent engineering responses, with concrete drying shrinkage as the first bundled application.",
   "creators": [
     {
-      "name": "deyuliang",
-      "orcid": "0009-0004-4042-8826"
+      "name": "Liang, Deyu",
+      "orcid": "0009-0004-4042-8826",
+      "affiliation": "School of Transportation and Surveying Engineering, Shenyang Jianzhu University, Shenyang, China"
+    },
+    {
+      "name": "Liu, Jinlong",
+      "affiliation": "School of Civil Engineering, Southeast University, Nanjing, China"
+    },
+    {
+      "name": "Xu, Lei",
+      "affiliation": "Laboratory of Construction Materials, École Polytechnique Fédérale de Lausanne, Lausanne, Switzerland"
     }
   ],
   "version": "0.1.0",

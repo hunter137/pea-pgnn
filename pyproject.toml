@@ -7,8 +7,12 @@ name = "pea-pgnn"
 version = "0.1.0"
 description = "Prior-anchored, structure-preserving neural prediction for time-dependent engineering responses"
 readme = "README.md"
-authors = [{ name = "deyuliang" }]
-maintainers = [{ name = "deyuliang" }]
+authors = [
+    { name = "Deyu Liang" },
+    { name = "Jinlong Liu" },
+    { name = "Lei Xu" },
+]
+maintainers = [{ name = "Deyu Liang" }]
 requires-python = ">=3.9"
 license = "MIT"
 license-files = ["LICENSE"]

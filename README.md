@@ -255,9 +255,14 @@ citation and DOI will be added when available.
 A Zenodo DOI badge will be added only after this GitHub repository is connected
 to Zenodo and a release has been archived. No placeholder DOI is used.
 
-## Author
+## Authors
 
-[**deyuliang**](https://github.com/hunter137)
+- **Deyu Liang** — School of Transportation and Surveying Engineering,
+  Shenyang Jianzhu University, Shenyang, China
+- **Jinlong Liu** — School of Civil Engineering, Southeast University, Nanjing,
+  China
+- **Lei Xu** — Laboratory of Construction Materials, École Polytechnique
+  Fédérale de Lausanne, Lausanne, Switzerland
 
 ## Acknowledgements
 
@@ -280,4 +285,4 @@ that license. The software is provided without warranty.
 
 PEA-PGNN 将论文中的知识体系整理为可复用代码：把经验量作为可修正锚点，把多种时间演化规律组成凸组合，并由前向结构保证点预测的非负、单调和有界性质。
 
-当前仓库是首个干净的软件包版本，包含核心模型、混凝土经验先验、训练封装、约束检查、测试和示例；不包含论文数据库、训练权重、论文正文、审稿材料和实验输出。本项目采用 MIT 开源许可证，作者为 `deyuliang`，资助信息见上方 Acknowledgements。
+当前仓库是首个干净的软件包版本，包含核心模型、混凝土经验先验、训练封装、约束检查、测试和示例；不包含论文数据库、训练权重、论文正文、审稿材料和实验输出。本项目采用 MIT 开源许可证，作者为 Deyu Liang、Jinlong Liu 和 Lei Xu，资助信息见上方 Acknowledgements。

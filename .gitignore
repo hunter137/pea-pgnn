@@ -18,7 +18,7 @@ env/
 # Packaging outputs
 build/
 dist/
-.qa-dist/
+.qa-dist*/
 *.egg-info/
 
 # Editors and operating systems
