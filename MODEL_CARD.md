@@ -102,7 +102,7 @@ properties for separately calculated interval endpoints.
 
 ## Reproducibility and provenance
 
-- software version: `0.1.1` development line;
+- software version: `0.1.1`;
 - license: MIT;
 - authors and software citation metadata: [`CITATION.cff`](CITATION.cff);
 - empirical lineage and implementation boundary:
@@ -114,4 +114,3 @@ When publishing results, archive the installed package version or commit,
 dataset and preprocessing version, group/split identifiers, configuration,
 random seeds, hardware and dependency information, checkpoint, and exact
 evaluation script.
-

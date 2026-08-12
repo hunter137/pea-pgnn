@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented here.
 
-## [0.1.1] - Unreleased
+## [0.1.1] - 2026-08-12
 
 ### Added
 
@@ -24,7 +24,7 @@ All notable changes to this project will be documented here.
 - expanded README guidance for empirical outputs, `predict_details`, runnable
   examples, and scientifically defensible temporal validation;
 - centralized the package version and aligned development metadata at `0.1.1`;
-  and
+- updated the GitHub Actions dependencies used by CI and release workflows; and
 - updated the public-release checklist to distinguish completed repository work
   from external publication configuration.
 

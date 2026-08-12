@@ -42,6 +42,7 @@ Documentation = "https://github.com/hunter137/pea-pgnn/tree/main/docs"
 Repository = "https://github.com/hunter137/pea-pgnn"
 Issues = "https://github.com/hunter137/pea-pgnn/issues"
 Changelog = "https://github.com/hunter137/pea-pgnn/blob/main/CHANGELOG.md"
+PyPI = "https://pypi.org/project/pea-pgnn/"
 
 [project.optional-dependencies]
 dev = [

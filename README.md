@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/github/license/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/Python-%E2%89%A53.9-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![PyPI](https://img.shields.io/pypi/v/pea-pgnn?style=flat-square)](https://pypi.org/project/pea-pgnn/)
 [![Version](https://img.shields.io/badge/version-0.1.1-2ea44f?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/CHANGELOG.md)
 [![Tests](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml)
 [![Ruff](https://img.shields.io/badge/lint-Ruff-D7FF64?style=flat-square&logo=ruff&logoColor=261230)](https://docs.astral.sh/ruff/)
@@ -67,9 +68,17 @@ CUDA- or ROCm-specific PyTorch build, follow the
 [official PyTorch installation selector](https://pytorch.org/get-started/locally/)
 before installing PEA-PGNN.
 
+### Install from PyPI
+
+Install the released package with:
+
+```bash
+python -m pip install pea-pgnn
+```
+
 ### Install from GitHub
 
-The current version can be installed directly with `pip`:
+The latest development version can be installed directly from GitHub:
 
 ```bash
 python -m pip install "git+https://github.com/hunter137/pea-pgnn.git"
@@ -90,15 +99,6 @@ For development and testing:
 ```bash
 python -m pip install -e ".[dev]"
 python -m pytest
-```
-
-### Planned PyPI release
-
-The project has not yet been uploaded to PyPI. After its first PyPI release,
-the standard installation command will be:
-
-```bash
-python -m pip install pea-pgnn
 ```
 
 ### Package naming
