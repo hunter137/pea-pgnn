@@ -1,0 +1,57 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Packaging outputs
+build/
+dist/
+*.egg-info/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Model artifacts and experiment outputs
+checkpoints/
+outputs/
+runs/
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+
+# Data are intentionally excluded from the public repository
+data/
+datasets/
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.h5
+*.hdf5
+
+# Manuscripts and submission artifacts
+*.doc
+*.docx
+*.pdf
+*.ppt
+*.pptx
+*.tex
+*.zip
+
