@@ -36,7 +36,7 @@ shrinkage prediction. The package contains the method and empirical-prior
 utilities, but **does not contain the paper's database, trained weights, or
 submission files**.
 
-> Status: the latest stable PyPI release is `0.1.1`; the `main` branch is the
+> Status: the latest stable PyPI release is `0.1.2`; the `main` branch is the
 > `0.2.0.dev0` development line. This repository is a clean, reusable
 > implementation extracted from research code. It is not yet the exact
 > reproduction archive for every experiment reported in the manuscript.

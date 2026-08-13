@@ -17,10 +17,18 @@ All notable changes to this project will be documented here.
 
 ### Changed
 
-- advanced the `main` branch to the `0.2.0.dev0` development line after the
-  stable `0.1.1` PyPI release; and
+- kept the `main` branch on the `0.2.0.dev0` development line after the stable
+  `0.1.2` maintenance release; and
 - limited the concrete empirical utilities to the B3-, GL2000-, and
   ACI209-inspired formulations actually used by the implementation.
+
+## [0.1.2] - 2026-08-13
+
+### Removed
+
+- an unused comparison utility that was not part of the paper implementation;
+  the concrete prior anchor continues to use only Model B3, ACI 209, and
+  GL2000, while the four candidate temporal laws remain unchanged.
 
 ## [0.1.1] - 2026-08-12
 
