@@ -49,7 +49,7 @@ submission files**.
   laws inherit non-negativity, monotonicity, and boundedness by construction.
 - **Two levels of use:** work with the low-level PyTorch module or the fitted
   NumPy-style regressor interface.
-- **Concrete application:** use B3-, GL2000-, ACI209-, and EC2-inspired
+- **Concrete application:** use B3-, GL2000-, and ACI209-inspired
   utilities to construct drying-shrinkage priors.
 - **Auditable behavior:** check predicted trajectories and standard regression
   metrics with reusable evaluation utilities.
@@ -229,7 +229,7 @@ software demonstration on synthetic data, not a benchmark claim.
 - `audit_trajectory`: numerical audit of non-negativity, monotonicity, and
   optional upper boundedness.
 - `regression_metrics`: R-squared, RMSE, MAE, and MAPE.
-- `pea_pgnn.concrete`: B3-, GL2000-, ACI209-, and EC2-inspired empirical
+- `pea_pgnn.concrete`: B3-, GL2000-, and ACI209-inspired empirical
   shrinkage utilities used by the concrete implementation.
 
 `PriorAnchoredRegressor.predict_details` returns `prediction`, corrected

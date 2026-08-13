@@ -221,42 +221,6 @@ def aci209_shrinkage(
     return _safe_microstrain(ultimate * time / (35.0 + time))
 
 
-def ec2_shrinkage(
-    time: ArrayLike,
-    relative_humidity: ArrayLike,
-    notional_size: ArrayLike,
-    compressive_strength: ArrayLike,
-) -> NDArray[np.float64]:
-    """Return the EC2-inspired shrinkage trajectory in microstrain."""
-
-    time, humidity, notional_size, strength = _broadcast_validated(
-        time=time,
-        relative_humidity=relative_humidity,
-        notional_size=notional_size,
-        compressive_strength=compressive_strength,
-    )
-    if np.any(time < 0.0):
-        raise ValueError("time must be non-negative")
-    if np.any((humidity < 0.0) | (humidity > 100.0)):
-        raise ValueError("relative_humidity must be in [0, 100]")
-    if np.any(notional_size <= 0.0) or np.any(strength <= 0.0):
-        raise ValueError("notional_size and compressive_strength must be positive")
-    size_factor = np.where(
-        notional_size <= 100.0,
-        1.0,
-        np.where(notional_size <= 200.0, 0.85, np.where(notional_size <= 300.0, 0.75, 0.70)),
-    )
-    base = 0.85 * (220.0 + 110.0 * 4.0) * np.exp(-0.12 * 0.1 * strength)
-    return _safe_microstrain(
-        base
-        * 1.55
-        * (1.0 - (humidity / 100.0) ** 3)
-        * size_factor
-        * time
-        / (time + 0.04 * np.sqrt(notional_size**3))
-    )
-
-
 def concrete_prior_anchors(
     loading_age: ArrayLike,
     relative_humidity: ArrayLike,
@@ -298,7 +262,6 @@ __all__ = [
     "b3_timescale",
     "b3_ultimate_shrinkage",
     "concrete_prior_anchors",
-    "ec2_shrinkage",
     "gl2000_shrinkage",
     "gl2000_ultimate_shrinkage",
 ]

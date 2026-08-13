@@ -83,14 +83,6 @@ The source is ACI 209R-92. Cement, curing, slump, fine-aggregate, and other
 correction factors that may be needed in a complete ACI calculation are not
 exposed as a comprehensive design-code interface here.
 
-### Eurocode 2-inspired comparison utility
-
-`ec2_shrinkage` provides a compact EC2-inspired drying-shrinkage trajectory for
-comparison. It fixes the cement-class coefficient used by the research code,
-uses a piecewise size factor, and applies numerical clipping. It is **not** used
-by `concrete_prior_anchors` and is not a substitute for EN 1992-1-1, its
-National Annex, or a project-specific design calculation.
-
 ## Composite PEA-PGNN anchors
 
 `concrete_prior_anchors` returns the following mapping:
@@ -151,4 +143,3 @@ Before relying on an empirical utility in a new study:
 These references establish the formulation lineage. The exact public code is
 the executable specification for this package release; any claim of direct
 standard conformance requires a separate clause-by-clause verification.
-

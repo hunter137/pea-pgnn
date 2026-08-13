@@ -18,7 +18,9 @@ All notable changes to this project will be documented here.
 ### Changed
 
 - advanced the `main` branch to the `0.2.0.dev0` development line after the
-  stable `0.1.1` PyPI release.
+  stable `0.1.1` PyPI release; and
+- limited the concrete empirical utilities to the B3-, GL2000-, and
+  ACI209-inspired formulations actually used by the implementation.
 
 ## [0.1.1] - 2026-08-12
 
@@ -30,7 +32,7 @@ All notable changes to this project will be documented here.
 - bug-report and feature-request forms, a pull-request template, code of
   conduct, and Dependabot configuration;
 - a Trusted Publishing release workflow for TestPyPI and PyPI; and
-- stable concrete implementation cases, EC2 coverage, metrics tests,
+- stable concrete implementation cases, metrics tests,
   invalid-input tests, a coverage threshold, and NumPy/PyTorch parity tests.
 
 ### Changed
