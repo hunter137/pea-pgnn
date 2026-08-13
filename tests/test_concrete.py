@@ -5,7 +5,6 @@ from pea_pgnn.concrete import (
     aci209_shrinkage,
     b3_shrinkage,
     concrete_prior_anchors,
-    ec2_shrinkage,
     gl2000_shrinkage,
 )
 
@@ -45,9 +44,7 @@ def test_concrete_prior_reference_case_is_stable() -> None:
         assert float(priors[name]) == pytest.approx(value, rel=1e-12)
 
 
-@pytest.mark.parametrize(
-    "function", [b3_shrinkage, gl2000_shrinkage, aci209_shrinkage, ec2_shrinkage]
-)
+@pytest.mark.parametrize("function", [b3_shrinkage, gl2000_shrinkage, aci209_shrinkage])
 def test_empirical_trajectories_are_monotonic(function) -> None:
     time = np.linspace(0.0, 1000.0, 100)
     common = {
@@ -64,15 +61,8 @@ def test_empirical_trajectories_are_monotonic(function) -> None:
         )
     elif function is gl2000_shrinkage:
         values = function(**common, compressive_strength=40.0)
-    elif function is aci209_shrinkage:
-        values = function(**common)
     else:
-        values = function(
-            time=time,
-            relative_humidity=60.0,
-            notional_size=100.0,
-            compressive_strength=40.0,
-        )
+        values = function(**common)
     assert values[0] == pytest.approx(0.0)
     assert np.all(np.diff(values) >= -1e-10)
 

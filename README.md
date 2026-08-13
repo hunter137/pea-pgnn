@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/github/license/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/Python-%E2%89%A53.9-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![PyPI](https://img.shields.io/pypi/v/pea-pgnn?style=flat-square)](https://pypi.org/project/pea-pgnn/)
-[![Version](https://img.shields.io/badge/version-0.1.1-2ea44f?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.1.2-2ea44f?style=flat-square)](https://github.com/hunter137/pea-pgnn/blob/main/CHANGELOG.md)
 [![Tests](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/hunter137/pea-pgnn/actions/workflows/tests.yml)
 [![Ruff](https://img.shields.io/badge/lint-Ruff-D7FF64?style=flat-square&logo=ruff&logoColor=261230)](https://docs.astral.sh/ruff/)
 [![GitHub release](https://img.shields.io/github/v/release/hunter137/pea-pgnn?style=flat-square)](https://github.com/hunter137/pea-pgnn/releases)
@@ -35,7 +35,7 @@ shrinkage prediction. The package contains the method and empirical-prior
 utilities, but **does not contain the paper's database, trained weights, or
 submission files**.
 
-> Status: `0.1.1` alpha. This repository is a clean, reusable implementation
+> Status: `0.1.2` alpha. This repository is a clean, reusable implementation
 > extracted from research code. It is not yet the exact reproduction archive
 > for every experiment reported in the manuscript.
 
@@ -47,7 +47,7 @@ submission files**.
   laws inherit non-negativity, monotonicity, and boundedness by construction.
 - **Two levels of use:** work with the low-level PyTorch module or the fitted
   NumPy-style regressor interface.
-- **Concrete application:** use B3-, GL2000-, ACI209-, and EC2-inspired
+- **Concrete application:** use B3-, GL2000-, and ACI209-inspired
   utilities to construct drying-shrinkage priors.
 - **Auditable behavior:** check predicted trajectories and standard regression
   metrics with reusable evaluation utilities.
@@ -215,7 +215,7 @@ software demonstration on synthetic data, not a benchmark claim.
 - `audit_trajectory`: numerical audit of non-negativity, monotonicity, and
   optional upper boundedness.
 - `regression_metrics`: R-squared, RMSE, MAE, and MAPE.
-- `pea_pgnn.concrete`: B3-, GL2000-, ACI209-, and EC2-inspired empirical
+- `pea_pgnn.concrete`: B3-, GL2000-, and ACI209-inspired empirical
   shrinkage utilities used by the concrete implementation.
 
 `PriorAnchoredRegressor.predict_details` returns `prediction`, corrected

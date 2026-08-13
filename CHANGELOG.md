@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented here.
 
+## [0.1.2] - 2026-08-13
+
+### Removed
+
+- an unused comparison utility that was not part of the paper implementation;
+  the concrete prior anchor continues to use only Model B3, ACI 209, and
+  GL2000, while the four candidate temporal laws remain unchanged.
+
 ## [0.1.1] - 2026-08-12
 
 ### Added
@@ -12,7 +20,7 @@ All notable changes to this project will be documented here.
 - bug-report and feature-request forms, a pull-request template, code of
   conduct, and Dependabot configuration;
 - a Trusted Publishing release workflow for TestPyPI and PyPI; and
-- stable concrete implementation cases, EC2 coverage, metrics tests,
+- stable concrete implementation cases, metrics tests,
   invalid-input tests, a coverage threshold, and NumPy/PyTorch parity tests.
 
 ### Changed

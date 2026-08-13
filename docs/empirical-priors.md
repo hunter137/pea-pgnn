@@ -12,8 +12,7 @@ retain characteristic magnitude, humidity, size, strength, and time terms from
 established shrinkage formulations, but they also contain database-specific
 choices, unit conversions, numerical clipping, and shared-parameter
 modifications used by PEA-PGNN. They must not be presented as certified or
-clause-complete implementations of ACI 209R-92, Model B3, GL2000, or Eurocode
-2.
+clause-complete implementations of ACI 209R-92, Model B3, or GL2000.
 
 Before using these functions for design, compliance, safety assessment, or a
 new material domain, consult the controlling standard or paper and validate the
@@ -27,7 +26,6 @@ implementation independently.
 | `loading_age` | age at start of drying, day |
 | `relative_humidity` | percent in `[0, 100]` |
 | `volume_surface_ratio` | `V/S`, millimetre |
-| `notional_size` | millimetre |
 | `water_content` | kg/m³ |
 | `compressive_strength` | MPa |
 | returned shrinkage | non-negative magnitude, microstrain |
@@ -83,14 +81,6 @@ The source is ACI 209R-92. Cement, curing, slump, fine-aggregate, and other
 correction factors that may be needed in a complete ACI calculation are not
 exposed as a comprehensive design-code interface here.
 
-### Eurocode 2-inspired comparison utility
-
-`ec2_shrinkage` provides a compact EC2-inspired drying-shrinkage trajectory for
-comparison. It fixes the cement-class coefficient used by the research code,
-uses a piecewise size factor, and applies numerical clipping. It is **not** used
-by `concrete_prior_anchors` and is not a substitute for EN 1992-1-1, its
-National Annex, or a project-specific design calculation.
-
 ## Composite PEA-PGNN anchors
 
 `concrete_prior_anchors` returns the following mapping:
@@ -144,10 +134,6 @@ Before relying on an empirical utility in a new study:
 - N. J. Gardner and M. J. Lockman. “Design Provisions for Drying Shrinkage and
   Creep of Normal-Strength Concrete.” *ACI Materials Journal* 98(2), 159–167
   (2001). [doi:10.14359/10199](https://doi.org/10.14359/10199)
-- European Committee for Standardization. *EN 1992-1-1:2004, Eurocode 2:
-  Design of concrete structures—Part 1-1: General rules and rules for
-  buildings* (2004). [Eurocode 2 overview](https://eurocodes.jrc.ec.europa.eu/EN-Eurocodes/eurocode-2-design-concrete-structures)
-
 These references establish the formulation lineage. The exact public code is
 the executable specification for this package release; any claim of direct
 standard conformance requires a separate clause-by-clause verification.
